@@ -63,8 +63,8 @@ else{
 let userNumber = prompt('Введи число будь якої довжини, а я перевірю скільки цифр було введено');
 alert(userNumber.length);
 
-let userYear = prompt('Введи рік, а я перевірю чи він високосний');
-if ( userYear % 4 === 0 ){
+let userYr = prompt('Введи рік, а я перевірю чи він високосний');
+if ( userYr % 4 === 0 ){
     alert("Цей рік високосний");
 }
 else{
@@ -128,3 +128,80 @@ if ( squarePerimeter > 2 * ( circlePerimeter / 3.14 ) ){
 else{
     alert( "Круг НЕ поміщається в квадрат" );
 }
+
+
+alert( "IT`S CORONA TIME!" );
+let question1 = prompt( "Кажуть що чим більше в тебе вдома туалетного паперу,\n тим більші твої шанси вижити при пандемії коронавірусу. Чому?\
+Варіанти відповіді(Вибираємо цифрами!)\n 1. Кожен рулон= +5 до імунітету і +10HP.\n \
+2. Коронавірус по своєму геномі, не здатний заразити людину з чистою сракою. \n 3. Твердження не є вірним і ви зверхньо смієтесь над панікерами\
+(але бумаги пару упаковок купили, про всяк випадок.)" );
+
+let question2 = prompt ( "Чому почалась ця епідємія? \n 1. Китайці самі вивели цей вірус в лабораторії і відбувся його витік.\
+\n2. Це все США/Росія чи будь який навмисний викид цього вірусу в світ. \n 3. Бо китайці жеруть кажанів, живих мишенят і іншу бридоту." );
+
+let question3 = prompt ( "Чому всюди вводять строгі карантини? \n 1.Бо всі ссикуни. \n2. Уряд дурить нас, щоб ми залишались вдома, а вони могли\
+поміняти батарейки в пташках поки ніхто не бачить. \n3. Тому що кількість заражених щодня зростає і розповсюдження вірусу може призвести до\
+глобальних, невтішних для нас наслідків." );
+let pointCounter = 0;
+if ( question1==3 ){
+    pointCounter += 1;
+}
+if ( question2 ==3 ){
+    pointCounter += 1;
+}
+if ( question3 ==3 ){
+    pointCounter += 1;
+}
+if ( pointCounter == 0 ){
+    alert('Ви той самий панікер в якого в підвалі 800кг круп, 200 упаковок туалетного паперу і костюм сталкера замість піжами.');
+}
+else if( pointCounter == 1 ){
+    alert('Ви все ще безнадійний панікер, але робите вигляд що ви холоднокровний, безстрашний пофігіст.');
+}
+else if( pointCounter == 2 ){
+    alert('Ви здорово оцінюєте ситуацію, але бажання купити туалетного паперу заставляє вас прокидатись вночі.');
+}
+else if( pointCounter == 3 ){
+    alert('Ви повністю усвідомлена людина яка дасть собі раду в будь якій ситуації. Ви помрете. Від старості');
+}
+
+
+alert("Введіть дату, а я виведу настуний день від цієї дати. Дата має бути обов'язково існуюча!");
+let userDay = prompt( "Введіть день." );
+let userMonth = prompt( "Введіть число місяця." );
+let userYear = prompt( "Введіть рік." );
+
+let nextDay = userDay;
+let nextMonth = userMonth;
+let nextYear = userYear;
+
+if ( userDay >= 1 && userDay < 31 ){
+    nextDay++;
+}if ( userDay == 31 && userMonth == 1||userMonth == 3||userMonth == 5||userMonth == 7||userMonth == 8||userMonth == 10 ){
+    nextDay = 1;
+}
+else if ( userDay == 31 && userMonth == 12 ){
+    nextDay = 1;
+    nextMonth = 1;
+}
+if ( userDay == 30 && userMonth == 4||userMonth == 6||userMonth == 9||userMonth == 11 ){
+    nextDay = 1;
+}
+if ( userDay == 28 && userMonth == 2 && userYear % 4 !== 0 ){
+    nextDay = 1;
+}
+if ( userDay == 28 && userMonth == 2 && userYear % 4 == 0 ){
+    nextDay = 29;
+}
+else if ( userDay == 29 && userMonth == 2 && userYear % 4 == 0 ){
+    nextDay = 1;
+}
+if ( nextDay == 1 && userMonth < 12 ){
+    nextMonth++;
+}
+else if ( nextDay == 1 && userMonth == 12 ){
+    nextMonth = 1;
+    nextYear++;
+}
+
+alert(`${nextDay}.${nextMonth}.${nextYear}`);
