@@ -118,3 +118,13 @@ else if ( amount >= 300 && amount < 500 ){
 else if ( amount >= 500 ){
     alert( `Ваша сума покупки зі знижкою в 7% складає ${ ( amount / 100 ) * 93 }$` );
 }
+
+
+let circlePerimeter = prompt ( "Введіть введіть периметр круга" );
+let squarePerimeter = prompt ( "Введіть периметр квадрата" );
+if ( squarePerimeter > 2 * ( circlePerimeter / 3.14 ) ){
+    alert( "Круг поміщається в квадрат" );
+}
+else{
+    alert( "Круг НЕ поміщається в квадрат" );
+}
