@@ -178,26 +178,26 @@ let nextYear = userYear;
 if ( userDay >= 1 && userDay < 31 ){
     nextDay++;
 }
- else if ( userDay == 31 && userMonth == 1||userMonth == 3 || userMonth == 5 || userMonth == 7 || userMonth == 8 || userMonth == 10 ){
+ else if ( userDay == 31 && (userMonth == 1||userMonth == 3 || userMonth == 5 || userMonth == 7 || userMonth == 8 || userMonth == 10) ){
     nextDay = 1;
 }
 else if ( userDay == 31 && userMonth == 12 ){
     nextDay = 1;
     nextMonth = 1;
 }
-else if ( userDay == 30 && userMonth == 4 || userMonth == 6 || userMonth == 9 || userMonth == 11 ){
+if ( userDay == 30 && (userMonth == 4 || userMonth == 6 || userMonth == 9 || userMonth == 11 )){
     nextDay = 1;
 }
 if ( userDay == 28 && userMonth == 2 && userYear % 4 !== 0 ){
     nextDay = 1;
 }
-else if ( userDay == 28 && userMonth == 2 && userYear % 4 == 0 ){
+if ( userDay == 28 && userMonth == 2 && userYear % 4 == 0 ){
     nextDay = 29;
 }
 else if ( userDay == 29 && userMonth == 2 && userYear % 4 == 0 ){
     nextDay = 1;
 }
-else if ( nextDay == 1 && userMonth < 12 ){
+if ( nextDay == 1 && userMonth < 12 ){
     nextMonth++;
 }
 else if ( nextDay == 1 && userMonth == 12 ){
@@ -205,4 +205,4 @@ else if ( nextDay == 1 && userMonth == 12 ){
     nextYear++;
 }
 
-alert( `${nextDay}.${nextMonth}.${nextYear} ` );
+alert(` ${nextDay}.${nextMonth}.${nextYear} `);
